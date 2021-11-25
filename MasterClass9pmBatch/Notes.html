@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    CONTROLLER IS CLASS
+    IT CONTAIN METHOD
+    CONTROLLER CLASS IS BASE CLASS
+    ALL CLASS INHERITED FROM CONTROLLER CLASS
+    business logic on controller
+    Entry point for application is controller
+    Contain two types of methods
+    Action Method is accessible by using url
+    Non Action not accessible by url
+    Non Action is Attrbute
+
+
+
+    Model
+    it  is a c# class
+    it contain data access code
+    combination Ado.net,Entity framework and dapper
+    if u want to connect database use model
+
+    View
+    it help to create user interface
+    where we can write various code
+    C#
+    javascript
+    jquery
+    angular js
+    react js etc
+    Html
+    Css
+
+    Extension for file is .cshtml
+
+    how you will write method which retur view page?
+
+    public ActionResult GetView()
+    {
+    return View();
+    }
+
+    how to pass datafrom controller to view?
+
+    public ActionResult sendData()
+    {
+    ViewBag.Name="Sai";
+    return View();
+    }
+
+    @ViewBag.Name
+
+    -------------------------
+
+    how  you will send EmployeeModel Obj to View using Viewbag?
+
+    class EmployeeModel
+    {
+    public int EmpId{get;set;}
+    public string EmpName{get;set;}
+    public int EmpSalary{get;set;}
+
+    }
+
+    public ActionResult GetData()
+    {
+
+    EmployeeModel obj=new  EmployeeModel();
+    obj.EmpId=1;
+    obj.EmpName="Future";
+    obj.EmpSalary=900000;
+
+    ViewBag.Emp=obj;
+    return View();
+    }
+
+    @ViewBag.Emp.EmpId<Br>
+    @ViewBag.Emp.EmpName<Br>
+    @ViewBag.Emp.EmpSalary<Br>
+
+    --------------------------------------------------------------------------------------------------
+
+    public ActionResult GetModel()
+    {
+    EmployeeModel obj=new  EmployeeModel();
+    obj.EmpId=1;
+    obj.EmpName="Future";
+    obj.EmpSalary=900000;
+
+    return View(obj);
+
+    }
+
+    @model Master.Models.EmployeeModel
+
+    @Model.EmpId<br>
+    @Model.EmpName<br>
+    @Model.EmpSalary<br>
+
+    -------------------------------------------------------------------------------------
+    public ActionResult GetModel()
+    {
+    List<EmployeeModel>
+        listObj=new  List<EmployeeModel>
+            ();
+            EmployeeModel obj=new  EmployeeModel();
+            obj.EmpId=1;
+            obj.EmpName="Future";
+            obj.EmpSalary=900000;
+
+            EmployeeModel obj1=new  EmployeeModel();
+            obj1.EmpId=2;
+            obj1.EmpName="Test2";
+            obj1.EmpSalary=800000;
+
+            EmployeeModel obj2=new  EmployeeModel();
+            obj2.EmpId=2;
+            obj2.EmpName="Test2";
+            obj2.EmpSalary=800000;
+
+            listObj.Add(obj);
+            listObj.Add(obj1);
+            listObj.Add(obj2);
+
+            object model=listObj;
+            return View(listObj);
+
+            }
+
+            @model Masterbatch.Models.EmployeeModel
+
+
+            <table>
+                <tr>
+                    <th>EmpId</th>
+                    <th>EmpName</th>
+                    <th>EmpSalary</th>
+                </tr>
+
+                @foreach(var item in Model)//3
+                {
+                <tr>
+                    <td>@item.EmpId</td>
+                    <td>@item.EmpName</td>
+                    <td>@item.EmpSalary</td>
+                </tr>
+
+                }
+
+            </table>
+
+
+
+
+
+</body>
+</html>

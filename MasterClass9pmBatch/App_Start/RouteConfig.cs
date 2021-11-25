@@ -13,11 +13,20 @@ namespace MasterClass9pmBatch
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+            
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+               name: "Default1",
+               url: "Agra/sweets",
+               defaults: new { controller = "Employee", action = "GetName", id = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
+               name: "Default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Employee", action = "GetName", id = UrlParameter.Optional }
+           );
+
         }
     }
 }

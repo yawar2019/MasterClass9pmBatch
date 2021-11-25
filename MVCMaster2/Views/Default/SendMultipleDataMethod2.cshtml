@@ -1,0 +1,22 @@
+﻿@model List<MasterClass9pmBatch.Models.EmployeeModel>
+@{
+    ViewBag.Title = "SendMultipleDataMethod2";
+}
+
+<h2>SendMultipleDataMethod2</h2>
+
+<table>
+    <tr>
+        <th>EmpId</th>
+        <th>Name</th>
+        <th>Salary</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmpId</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpSalary</td>
+        </tr>
+    }
+</table>

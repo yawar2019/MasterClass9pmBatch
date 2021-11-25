@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterClass9pmBatch", "MasterClass9pmBatch\MasterClass9pmBatch.csproj", "{0504248D-F707-418B-831E-675A5DC7A82A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCMaster2", "MVCMaster2\MVCMaster2.csproj", "{8D89BB48-F14B-4182-84E1-2FD453A4E789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0504248D-F707-418B-831E-675A5DC7A82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0504248D-F707-418B-831E-675A5DC7A82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0504248D-F707-418B-831E-675A5DC7A82A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D89BB48-F14B-4182-84E1-2FD453A4E789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D89BB48-F14B-4182-84E1-2FD453A4E789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D89BB48-F14B-4182-84E1-2FD453A4E789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D89BB48-F14B-4182-84E1-2FD453A4E789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

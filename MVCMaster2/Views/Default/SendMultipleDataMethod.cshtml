@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "SendMultipleDataMethod";
+}
+
+<h2>SendMultipleDataMethod</h2>
+
+   @*//obj which is holding collection information*@
+<table class="table table-bordered table-condensed table-responsive">
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+    </tr>
+
+
+    @foreach (var item in ViewBag.empdetail)//3
+    {
+        <tr>
+            <td>
+                @item.EmpId
+            </td>
+            <td>
+                @item.EmpName
+            </td>
+            <td>
+                @item.EmpSalary
+            </td>
+        </tr>
+    }
+
+</table>
