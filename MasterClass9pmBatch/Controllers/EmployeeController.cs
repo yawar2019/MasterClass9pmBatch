@@ -9,7 +9,7 @@ namespace MasterClass9pmBatch.Controllers
 {
     public class EmployeeController : Controller
     {
-        // GET: Employee code is updated
+        // GET: Employee
 
         public string GetId(int? id ,string Name,string designation)
         {
