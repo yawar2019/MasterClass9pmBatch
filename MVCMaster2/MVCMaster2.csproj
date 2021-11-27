@@ -157,6 +157,7 @@
     <Content Include="Views\Default\SendMultipleDataMethod.cshtml" />
     <Content Include="Views\Default\SendDataMethodUsingModel.cshtml" />
     <Content Include="Views\Default\SendMultipleDataMethod2.cshtml" />
+    <Content Include="Views\Default\SendMultipleDataMethod3.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
