@@ -163,13 +163,13 @@ namespace MVCMaster2.Controllers
         }
 
 
-        public ActionResult MulipleOutput()
+        public RedirectResult MulipleOutput()
         {
             return Redirect("http://www.google.com");
         }
 
 
-        public ActionResult MulipleOutput1()
+        public RedirectResult MulipleOutput1()
         {
             return Redirect("~/Default/MulipleOutput2");
         }
@@ -178,6 +178,52 @@ namespace MVCMaster2.Controllers
         public ActionResult MulipleOutput2()
         {
             return Content("hello..");
+        }
+
+        public FileResult GetmeFile()
+        {
+            return File("~/Web.config", "text/plain");
+        }
+
+        public FileResult GetmeFile2()
+        {
+            return File("~/Web.config", "application/xml");
+        }
+        public FileResult GetmeFile3()
+        {
+            return File("~/ActionResult.pdf", "application/pdf", "Mvc9pmActionResult.pdf");
+        }
+
+        public JsonResult Getjsondata()
+        {
+            List<EmployeeModel> listemp = new List<EmployeeModel>();
+
+
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "Sai";
+            emp.EmpSalary = 34331;
+
+
+            EmployeeModel emp1 = new EmployeeModel();
+            emp1.EmpId = 2;
+            emp1.EmpName = "Jagdish";
+            emp1.EmpSalary = 44331;
+
+
+            EmployeeModel emp2 = new EmployeeModel();
+            emp2.EmpId = 3;
+            emp2.EmpName = "Gaurav";
+            emp2.EmpSalary = 54331;
+
+
+            listemp.Add(emp);
+            listemp.Add(emp1);
+            listemp.Add(emp2);
+
+
+            return Json(listemp,JsonRequestBehavior.AllowGet);
+
         }
     }
 }

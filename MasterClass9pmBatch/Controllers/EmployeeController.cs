@@ -38,7 +38,6 @@ namespace MasterClass9pmBatch.Controllers
             else
             {
                 return Redirect("http://www.google.com");
-
             }
         }
 
@@ -60,18 +59,17 @@ namespace MasterClass9pmBatch.Controllers
 
         }
 
-        public ActionResult SendEmployeeData()
+        public ViewResult SendEmployeeData()
         {
             EmployeeModel emp = new EmployeeModel();
             emp.EmpId = 1;
             emp.EmpName = "Gaurav";
             emp.EmpSalary = 49383;
-
-             
             
-            return View(emp);
-
+            return View();
         }
+
+         
 
     }
 }
