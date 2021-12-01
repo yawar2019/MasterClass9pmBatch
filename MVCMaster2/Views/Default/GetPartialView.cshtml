@@ -1,0 +1,22 @@
+﻿@model List<MVCMaster2.Models.StudentLocationModel>
+@{
+    ViewBag.Title = "GetPartialView";
+}
+
+<h2>GetPartialView</h2>
+
+<h1>Andhra Pradesh</h1>
+Harandh
+sai kiran
+bhavishya<br />
+<h2>Hyderabad</h2>
+Bhuwan<br />
+@{var s = Html.Partial("_StudentPartialView", Model);
+    int a = 10;
+    if (a == 10)
+    {
+        @s
+    }
+
+    }<br /><br />
+@{Html.RenderPartial("_StudentPartialView", Model)}

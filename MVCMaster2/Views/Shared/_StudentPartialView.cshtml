@@ -1,0 +1,14 @@
+﻿@*@model List<MVCMaster2.Models.StudentLocationModel>*@
+
+<h3>Orissa</h3>
+Rajesh
+srimanth Mohanty<br />
+<h4>Lucknow</h4>
+Prashanth Rathore
+
+<br />
+
+@foreach (var item in Model)
+{
+    @item.StudentName <span> - </span>@item.Location<br />
+}

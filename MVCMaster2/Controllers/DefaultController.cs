@@ -1,4 +1,5 @@
 ﻿using MasterClass9pmBatch.Models;
+using MVCMaster2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -224,6 +225,28 @@ namespace MVCMaster2.Controllers
 
             return Json(listemp,JsonRequestBehavior.AllowGet);
 
+        }
+
+        public ActionResult GetPartialView()
+        {
+            StudentLocationModel std = new StudentLocationModel();
+            std.StudentName = "Farheen";
+            std.Location = "Kerala";
+
+            StudentLocationModel std1 = new StudentLocationModel();
+            std1.StudentName = "Rajeev";
+            std1.Location = "Kerala";
+
+            StudentLocationModel std2 = new StudentLocationModel();
+            std2.StudentName = "Gaurav";
+            std2.Location = "Maharashtra";
+
+            List<StudentLocationModel> stdListobj = new List<StudentLocationModel>();
+            stdListobj.Add(std);
+            stdListobj.Add(std1);
+            stdListobj.Add(std2);
+
+            return View(stdListobj);
         }
     }
 }
