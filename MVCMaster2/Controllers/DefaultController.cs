@@ -227,7 +227,7 @@ namespace MVCMaster2.Controllers
 
         }
 
-        public ActionResult GetPartialView()
+        public PartialViewResult GetPartialView()
         {
             StudentLocationModel std = new StudentLocationModel();
             std.StudentName = "Farheen";
@@ -246,7 +246,7 @@ namespace MVCMaster2.Controllers
             stdListobj.Add(std1);
             stdListobj.Add(std2);
 
-            return View(stdListobj);
+            return PartialView("_StudentPartialView", stdListobj);
         }
     }
 }
