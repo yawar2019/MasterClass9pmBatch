@@ -172,7 +172,12 @@ namespace MVCMaster2.Controllers
 
         public RedirectResult MulipleOutput1()
         {
-            return Redirect("~/Default/MulipleOutput2");
+            EmployeeModel emp1 = new EmployeeModel();
+            emp1.EmpId = 2;
+            emp1.EmpName = "Jagdish";
+            emp1.EmpSalary = 44331;
+
+            return Redirect("~/new/Index/?EmpId="+emp1.EmpId+"&EmpName="+emp1.EmpName+"&EmpSalary="+emp1.EmpSalary);
         }
 
 
@@ -248,5 +253,41 @@ namespace MVCMaster2.Controllers
 
             return PartialView("_StudentPartialView", stdListobj);
         }
+
+        public ContentResult getContent(int? id)
+        {
+            if (id==1)
+            {
+                return Content("Hello Bhavihsya");
+            }
+            else if(id==2)
+            {
+                return Content("<p style=color:red>Hello Bhavishiya</p>");
+            }
+            else
+            {
+                return Content("<script>alert('Hello Bhavishya')</script>");
+            }
+        }
+
+        public RedirectToRouteResult RedirectToMyMethod()
+        {
+            return RedirectToAction("MulipleOutput2");
+        }
+
+        public RedirectToRouteResult RedirectToMyMethod2()
+        {
+            EmployeeModel emp1 = new EmployeeModel();
+            emp1.EmpId = 2;
+            emp1.EmpName = "Jagdish";
+            emp1.EmpSalary = 44331;
+
+            return RedirectToAction("Index","New", emp1);
+        }
+        public RedirectToRouteResult RedirectToMyMethod3()
+        {
+            return RedirectToRoute("IceCream");
+        }
+
     }
 }
