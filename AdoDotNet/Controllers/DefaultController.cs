@@ -18,6 +18,31 @@ namespace AdoDotNet.Controllers
 
             return View(db.GetEmployees());
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(EmployeeModel emp)
+        {
+            int result = db.Save(emp);
+            if (result > 0)
+            {
+                return Redirect("~/Default/Index");
+            }
+            return View();
+        }
+
+
+
+        //[HttpPost]
+        //public ActionResult Create(string EmpName,int EmpSalary)
+        //{
+        //    return View();
+        //}
+
     }
 }
 
