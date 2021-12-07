@@ -35,13 +35,26 @@ namespace AdoDotNet.Controllers
             return View();
         }
 
+        public ActionResult Edit(int? id)
+        {
+            EmployeeModel emp = db.GetEmployeeById(id);
+            return View(emp);
+        }
 
 
-        //[HttpPost]
-        //public ActionResult Create(string EmpName,int EmpSalary)
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult Edit(EmployeeModel emp)
+        {
+             
+            var result = db.Save(emp);
+            if (result > 0)
+            {
+                return Redirect("~/Default/Index");
+            }
+            return View();
+
+
+        }//
 
     }
 }
