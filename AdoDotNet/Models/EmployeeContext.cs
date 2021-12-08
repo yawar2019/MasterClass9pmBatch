@@ -54,7 +54,7 @@ namespace AdoDotNet.Models
             cmd.Parameters.AddWithValue("@EmpName", emp.EmpName);
             cmd.CommandType = CommandType.StoredProcedure;
 
-           
+
             con.Open();
             int i = cmd.ExecuteNonQuery();
             con.Close();
@@ -65,11 +65,11 @@ namespace AdoDotNet.Models
 
         public EmployeeModel GetEmployeeById(int? id)
         {
-             EmployeeModel  emp = new  EmployeeModel();
+            EmployeeModel emp = new EmployeeModel();
             SqlCommand cmd = new SqlCommand("[usp_getEmployeeById]", con);
             cmd.CommandType = CommandType.StoredProcedure;
             DataTable dt = new DataTable();
-            cmd.Parameters.AddWithValue("EmpId",id);
+            cmd.Parameters.AddWithValue("EmpId", id);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             foreach (DataRow dr in dt.Rows)//3
@@ -80,6 +80,19 @@ namespace AdoDotNet.Models
             }
 
             return emp;
+        }
+
+  
+        public int DeleteById(int? id)
+        {
+
+            SqlCommand cmd = new SqlCommand("usp_DeleteById", con);
+            cmd.Parameters.AddWithValue("@EmpId", id);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
         }
     }
 }
