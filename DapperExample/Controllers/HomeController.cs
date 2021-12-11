@@ -33,5 +33,41 @@ namespace DapperExample.Controllers
             }
             return View();
         }
+
+        public ActionResult Edit(int ? id)
+        {
+            EmployeeModel emp = db.GetEmployeeById(id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EmployeeModel emp)
+        {
+            int result = db.SaveEmployee(emp);
+            if (result > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            EmployeeModel emp = db.GetEmployeeById(id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            int result = db.DeleteEmployeeById(id);
+            if (result > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
     }
 }
