@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoDotNet", "AdoDotNet\AdoD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperExample", "DapperExample\DapperExample.csproj", "{1BB5E7FB-70DD-42B2-95A9-8A79913CB33C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkApproach", "EntityFrameworkApproach\EntityFrameworkApproach.csproj", "{566871C7-48F3-4314-90A6-3F30EF1A8C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseApproach", "DatabaseApproach\DatabaseApproach.csproj", "{BC5DCF59-1920-4134-A6C3-00280E28D6C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{1BB5E7FB-70DD-42B2-95A9-8A79913CB33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BB5E7FB-70DD-42B2-95A9-8A79913CB33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BB5E7FB-70DD-42B2-95A9-8A79913CB33C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{566871C7-48F3-4314-90A6-3F30EF1A8C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566871C7-48F3-4314-90A6-3F30EF1A8C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566871C7-48F3-4314-90A6-3F30EF1A8C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566871C7-48F3-4314-90A6-3F30EF1A8C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5DCF59-1920-4134-A6C3-00280E28D6C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5DCF59-1920-4134-A6C3-00280E28D6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5DCF59-1920-4134-A6C3-00280E28D6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5DCF59-1920-4134-A6C3-00280E28D6C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
