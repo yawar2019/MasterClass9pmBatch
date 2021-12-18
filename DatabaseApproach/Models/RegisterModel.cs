@@ -8,6 +8,7 @@ namespace DatabaseApproach.Models
 {
     public class RegisterModel
     {
+        [Key]
         public int UserId { get; set; }
         [Required(ErrorMessage ="UserName Cannot Be Empty")]
         public string UserName { get; set; }
