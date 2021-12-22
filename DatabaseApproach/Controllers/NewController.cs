@@ -20,5 +20,11 @@ namespace DatabaseApproach.Controllers
         {
             return View();
         }
+        public ActionResult GetHtmlHelperData()
+        {
+            employeeDetail det = new employeeDetail();
+            det.EmpName = "prashant";
+            return View(det);
+        }
     }
 }

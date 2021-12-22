@@ -17,7 +17,7 @@ namespace DatabaseApproach.Controllers
         // GET: employeeDetails
         public ActionResult Index()
         {
-            return View(db.employeeDetails.ToList());
+            return View(db.sp_employee().ToList());
         }
 
         // GET: employeeDetails/Details/5

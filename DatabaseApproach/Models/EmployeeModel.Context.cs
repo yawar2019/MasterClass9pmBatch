@@ -12,6 +12,8 @@ namespace DatabaseApproach.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class EmployeeEntities : DbContext
     {
@@ -26,5 +28,10 @@ namespace DatabaseApproach.Models
         }
     
         public virtual DbSet<employeeDetail> employeeDetails { get; set; }
+    
+        public virtual ObjectResult<sp_employee_Result> sp_employee()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_employee_Result>("sp_employee");
+        }
     }
 }
