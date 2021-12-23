@@ -28,6 +28,7 @@ namespace DatabaseApproach.Models
         }
     
         public virtual DbSet<employeeDetail> employeeDetails { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
     
         public virtual ObjectResult<sp_employee_Result> sp_employee()
         {
