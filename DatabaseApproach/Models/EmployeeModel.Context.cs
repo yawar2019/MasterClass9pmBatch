@@ -34,5 +34,7 @@ namespace DatabaseApproach.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_employee_Result>("sp_employee");
         }
+
+        public System.Data.Entity.DbSet<DatabaseApproach.Models.EmpDeptDetails> EmpDeptDetails { get; set; }
     }
 }

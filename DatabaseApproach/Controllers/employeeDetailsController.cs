@@ -15,11 +15,26 @@ namespace DatabaseApproach.Controllers
         private EmployeeEntities db = new EmployeeEntities();
 
         // GET: employeeDetails
+        //public ActionResult Index()
+        //{
+        //    return View(db.sp_employee().ToList());
+        //}
         public ActionResult Index()
         {
-            return View(db.sp_employee().ToList());
+            var empdept = (from e in db.employeeDetails
+                           join
+                          d in db.Departments
+                          on
+                           e.DeptId equals d.DeptId
+                           select new EmpDeptDetails
+                           {
+                               EmpId = e.EmpId,
+                               EmpName = e.EmpName,
+                               EmpSalary = e.EmpSalary,
+                               DeptName=d.DeptName
+                           }).ToList();
+            return View(empdept);
         }
-
         // GET: employeeDetails/Details/5
         public ActionResult Details(int? id)
         {
@@ -122,6 +137,11 @@ namespace DatabaseApproach.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult HtmlHelperExample()
+        {
+            return View();
         }
     }
 }

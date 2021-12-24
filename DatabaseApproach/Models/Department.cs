@@ -11,9 +11,11 @@ namespace DatabaseApproach.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Department
     {
+        [Key]
         public int DeptId { get; set; }
         public string DeptName { get; set; }
         public string Description { get; set; }

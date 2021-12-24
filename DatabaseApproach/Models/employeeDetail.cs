@@ -11,9 +11,11 @@ namespace DatabaseApproach.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class employeeDetail
     {
+        [Key]
         public int EmpId { get; set; }
         public string EmpName { get; set; }
         public Nullable<int> EmpSalary { get; set; }

@@ -1,0 +1,16 @@
+﻿@model DatabaseApproach.Models.employeeDetail
+@{
+    ViewBag.Title = "HtmlHelperExample";
+}
+
+<h2>HtmlHelperExample</h2>
+
+@*<input type="text" name="name" value="" /><br />
+@Html.Editor("EmpName")
+@Html.TextBox("LastName")
+@Html.TextBoxFor(s=>s.Address)
+@Html.EditorFor(s => s.Address)
+@Html.EditorForModel(Model)*@
+
+
+@Html.TextBox("FirstName","Dilip",new {@class="form-control",@id="txtEmpId"})

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DatabaseApproach.Models.employeeDetail>
+﻿@model IEnumerable<DatabaseApproach.Models.EmpDeptDetails>
 
 @{
     ViewBag.Title = "Index";
@@ -18,25 +18,7 @@
             @Html.DisplayNameFor(model => model.EmpSalary)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DeptId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dob)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MobileNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Available)
+            @Html.DisplayNameFor(model => model.DeptName)
         </th>
         <th></th>
     </tr>
@@ -50,25 +32,7 @@
             @Html.DisplayFor(modelItem => item.EmpSalary)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DeptId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dob)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MobileNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Available)
+            @Html.DisplayFor(modelItem => item.DeptName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.EmpId }) |
