@@ -18,7 +18,15 @@ namespace DatabaseApproach.Controllers
         [HttpPost]
         public ActionResult Index(RegisterModel reg)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                return Content("Validated successfully");
+            }
+            else
+            {
+                return Content("Validation failed");
+
+            }
         }
         public ActionResult GetHtmlHelperData()
         {

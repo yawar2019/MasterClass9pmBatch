@@ -1,4 +1,5 @@
 ﻿@model DatabaseApproach.Models.employeeDetail
+@using DatabaseApproach.UserDefinedControls
 @{
     ViewBag.Title = "HtmlHelperExample";
 }
@@ -32,9 +33,28 @@
 <br />
 @Html.TextArea("Address","Hyderabad",16,8,null)
 
+@Html.DropDownList("Employee")
+<br />
+@Html.DropDownList("Employees",(IEnumerable<SelectListItem>)ViewBag.Employee,"select Employee",new {@class="form-control"})
+
+<br />
+@CustomControl.MyLabel("I Accept the Agreement")
+ 
+@Html.createUrControl2("text")
+@Html.createUrControl2("radio")
+@Html.createUrControl2("checkbox")
+@Html.createUrControl2("file")
+
+
+@helper mytest()
+{
+    <h1>Hi</h1>
+    }
+  @mytest()
 <script>
     function fun()
     {
         alert('Hello World');
     }
+  
 </script>

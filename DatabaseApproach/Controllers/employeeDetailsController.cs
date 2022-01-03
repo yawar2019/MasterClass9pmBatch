@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DatabaseApproach.Models;
+using System.IO;
 
 namespace DatabaseApproach.Controllers
 {
@@ -31,7 +32,7 @@ namespace DatabaseApproach.Controllers
                                EmpId = e.EmpId,
                                EmpName = e.EmpName,
                                EmpSalary = e.EmpSalary,
-                               DeptName=d.DeptName
+                               DeptName = d.DeptName
                            }).ToList();
             return View(empdept);
         }
@@ -141,7 +142,45 @@ namespace DatabaseApproach.Controllers
 
         public ActionResult HtmlHelperExample()
         {
+            ViewBag.Employee = new SelectList(db.employeeDetails, "EmpId", "EmpName", 59032);
             return View();
+        }
+
+        public ActionResult RegistrationForm()
+        {
+            ViewBag.Employee = new SelectList(db.employeeDetails, "EmpId", "EmpName", 59032);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RegistrationForm(string Fname, string Password, string Gender, string Manager)
+        {
+            ViewBag.Employee = new SelectList(db.employeeDetails, "EmpId", "EmpName", 59032);
+            return View();
+        }
+
+        public ActionResult UploadDocument()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UploadDocument(HttpPostedFileBase fileupload)
+        {
+            string filename = Path.GetFileName(fileupload.FileName);
+            string path = Server.MapPath("~/upload");
+            fileupload.SaveAs(Path.Combine(path, filename));
+            ViewBag.msg = "uploaded successfully";
+
+            return View();
+        }
+
+
+
+        public JsonResult AddManagerMr(string Name)
+        {
+            string result = "Mr " + Name;
+            return Json(result,JsonRequestBehavior.AllowGet);
         }
     }
 }

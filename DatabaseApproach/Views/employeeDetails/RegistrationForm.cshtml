@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "RegistrationForm";
+}
+
+<h2>RegistrationForm</h2>
+
+<form action="~/employeeDetails/RegistrationForm" method="post">
+   <div class="row">
+     <div class="col-md-2">
+        <label>FirstName</label></div>
+        <div class="col-md-10">
+            <input type="text" class="form-control" name="Fname" id="Fname" value="" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Password</label>
+        </div>
+        <div class="col-md-10">
+            <input type="password" class="form-control" name="Password" value="" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Gender</label>
+        </div>
+        <div class="col-md-10">
+            <input type="radio" name="Gender" value="Male" /><span>Male</span>
+            <input type="radio" name="Gender" value="Female" /><span>Female</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Select Manager</label>
+        </div>
+        <div class="col-md-10">
+            @Html.DropDownList("Manager", (IEnumerable<SelectListItem>)ViewBag.Employee, "Select Employee",new {@class="form-control",@onchange= "ddlSelectedManager()"})
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Selected User</label>
+        </div>
+        
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="selectedManager" value="" />
+         </div>
+    </div>
+     <input type="submit" value="save" />
+</form>
+
+
+<script src="~/scripts/jquery-1.10.2.js"></script>
+<script>
+    function ddlSelectedManager()
+    {
+        var Manager = $('#Manager :selected').text();
+        $.ajax({
+            url: 'http://localhost:53633/employeeDetails/AddManagerMr',
+            type: 'GET',
+            datatype: 'JSON',
+            data: {
+                Name:Manager
+            },
+            success: function (result) {
+                alert(result);
+            }
+
+        })
+
+        alert(Manager);
+    }
+
+    $(document).ready(function () {
+
+        //function 
+        //var Fname = $('#Fname').val();
+        //alert(Fname);
+
+        $('#Fname').on('change',function () {
+
+            var Fname = $('#Fname').val();
+            alert(Fname);
+        });
+
+
+    });
+    
+    
+
+   
+</script>
+ 
