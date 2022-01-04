@@ -34,7 +34,23 @@ namespace DatabaseApproach.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_employee_Result>("sp_employee");
         }
-
-        public System.Data.Entity.DbSet<DatabaseApproach.Models.EmpDeptDetails> EmpDeptDetails { get; set; }
+    
+        public virtual ObjectResult<spr_getEmployeeDetails_Result> spr_getEmployeeDetails()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spr_getEmployeeDetails_Result>("spr_getEmployeeDetails");
+        }
+    
+        public virtual int spr_insertEmployee(string empName, Nullable<int> empSalary)
+        {
+            var empNameParameter = empName != null ?
+                new ObjectParameter("EmpName", empName) :
+                new ObjectParameter("EmpName", typeof(string));
+    
+            var empSalaryParameter = empSalary.HasValue ?
+                new ObjectParameter("EmpSalary", empSalary) :
+                new ObjectParameter("EmpSalary", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spr_insertEmployee", empNameParameter, empSalaryParameter);
+        }
     }
 }

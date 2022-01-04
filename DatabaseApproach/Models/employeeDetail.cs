@@ -11,11 +11,9 @@ namespace DatabaseApproach.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class employeeDetail
     {
-        [Key]
         public int EmpId { get; set; }
         public string EmpName { get; set; }
         public Nullable<int> EmpSalary { get; set; }
@@ -27,5 +25,6 @@ namespace DatabaseApproach.Models
         public string MobileNo { get; set; }
         public Nullable<bool> Available { get; set; }
         public string Mobiles { get; set; }
+        public Nullable<System.DateTime> CreatedOn { get; set; }
     }
 }

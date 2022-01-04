@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BC5DCF59-1920-4134-A6C3-00280E28D6C0}</ProjectGuid>
+    <ProjectGuid>{78A0E087-CA22-4C76-9455-1948F0D548E9}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DatabaseApproach</RootNamespace>
-    <AssemblyName>DatabaseApproach</AssemblyName>
+    <RootNamespace>ModelBasedapproach</RootNamespace>
+    <AssemblyName>ModelBasedapproach</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -132,15 +132,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\EmployeeModel.Context.tt">
+    <Content Include="Models\ModelFirstApproach.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EmployeeModel.Context.cs</LastGenOutput>
-      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+      <LastGenOutput>ModelFirstApproach.Context.cs</LastGenOutput>
+      <DependentUpon>ModelFirstApproach.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\EmployeeModel.tt">
+    <Content Include="Models\ModelFirstApproach.edmx.sql" />
+    <Content Include="Models\ModelFirstApproach.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmployeeModel.edmx</DependentUpon>
-      <LastGenOutput>EmployeeModel.cs</LastGenOutput>
+      <LastGenOutput>ModelFirstApproach.cs</LastGenOutput>
+      <DependentUpon>ModelFirstApproach.edmx</DependentUpon>
     </Content>
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -162,42 +163,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\employeeDetailsController.cs" />
-    <Compile Include="Controllers\NewController.cs" />
+    <Compile Include="Controllers\EmployeeInfoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Department.cs">
-      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    <Compile Include="Models\EmployeeInfo.cs">
+      <DependentUpon>ModelFirstApproach.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmpDeptDetails.cs" />
-    <Compile Include="Models\employeeDetail.cs">
-      <DependentUpon>EmployeeModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EmployeeModel.Context.cs">
+    <Compile Include="Models\ModelFirstApproach.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeModel.Context.tt</DependentUpon>
+      <DependentUpon>ModelFirstApproach.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeModel.cs">
+    <Compile Include="Models\ModelFirstApproach.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeModel.tt</DependentUpon>
+      <DependentUpon>ModelFirstApproach.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeModel.Designer.cs">
+    <Compile Include="Models\ModelFirstApproach.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+      <DependentUpon>ModelFirstApproach.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\RegisterModel.cs" />
-    <Compile Include="Models\spr_getEmployeeDetails_Result.cs">
-      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    <Compile Include="Models\ModelFirstApproach1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFirstApproach.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_employee_Result.cs">
-      <DependentUpon>EmployeeModel.tt</DependentUpon>
+    <Compile Include="Models\ModelFirstApproach2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelFirstApproach.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDefinedControls\CustomControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -205,28 +203,21 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\EmployeeModel.edmx">
+    <EntityDeploy Include="Models\ModelFirstApproach.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EmployeeModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelFirstApproach2.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\EmployeeModel.edmx.diagram">
-      <DependentUpon>EmployeeModel.edmx</DependentUpon>
+    <Content Include="Models\ModelFirstApproach.edmx.diagram">
+      <DependentUpon>ModelFirstApproach.edmx</DependentUpon>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\employeeDetails\Create.cshtml" />
-    <Content Include="Views\employeeDetails\Delete.cshtml" />
-    <Content Include="Views\employeeDetails\Details.cshtml" />
-    <Content Include="Views\employeeDetails\Edit.cshtml" />
-    <Content Include="Views\employeeDetails\Index.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Create.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Delete.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Details.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Edit.cshtml" />
+    <Content Include="Views\EmployeeInfoes\Index.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\New\Index.cshtml" />
-    <Content Include="Views\New\GetHtmlHelperData.cshtml" />
-    <Content Include="Views\employeeDetails\HtmlHelperExample.cshtml" />
-    <Content Include="Views\employeeDetails\RegistrationForm.cshtml" />
-    <Content Include="Views\employeeDetails\UploadDocument.cshtml" />
-    <Content Include="Views\New\GetStoreprocData.cshtml" />
-    <Content Include="Views\New\InsertEmployee.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -236,7 +227,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="upload\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -254,9 +244,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53633</DevelopmentServerPort>
+          <DevelopmentServerPort>62137</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53633/</IISUrl>
+          <IISUrl>http://localhost:62137/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

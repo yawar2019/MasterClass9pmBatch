@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseApproach.Models
+namespace ModelBasedapproach.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Department
+    public partial class EmployeeInfo
     {
-        public int DeptId { get; set; }
-        public string DeptName { get; set; }
-        public string Description { get; set; }
+        public int EmpId { get; set; }
+        public string EmpName { get; set; }
+        public int EmpSalary { get; set; }
     }
 }

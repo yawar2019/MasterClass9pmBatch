@@ -10,13 +10,20 @@
 namespace DatabaseApproach.Models
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class sp_employee_Result
+    
+    public partial class spr_getEmployeeDetails_Result
     {
-        [Key]
         public int EmpId { get; set; }
         public string EmpName { get; set; }
         public Nullable<int> EmpSalary { get; set; }
+        public Nullable<int> DeptId { get; set; }
+        public string Address { get; set; }
+        public Nullable<System.DateTime> dob { get; set; }
+        public string Mobiles { get; set; }
+        public bool Status { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public string MobileNo { get; set; }
+        public Nullable<bool> Available { get; set; }
+        public Nullable<System.DateTime> CreatedOn { get; set; }
     }
 }
