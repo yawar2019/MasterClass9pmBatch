@@ -1,4 +1,5 @@
-﻿using MasterClass9pmBatch.Models;
+﻿using MasterClass9pmBatch.Filters;
+using MasterClass9pmBatch.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +11,18 @@ namespace MasterClass9pmBatch.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee Fareheen
+       
 
         public string GetId(int? id ,string Name,string designation)
         {
             return "My Employee id "+id+" My Employee Name is "+Name+" Designation is"+designation;
         }
+        [CustomFilter]
 
-        public string GetName()
+        public ActionResult GetName()
         {
-            return "Hello";
+            ViewBag.Player = "Dhoni";
+            return View();
         }
 
         public ActionResult MySecondView()

@@ -140,6 +140,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Filters\CustomFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,6 +167,7 @@
     <Content Include="Views\Employee\GetAttributeRoutExample.cshtml" />
     <Content Include="Views\Employee\SendData.cshtml" />
     <Content Include="Views\Employee\SendEmployeeData.cshtml" />
+    <Content Include="Views\Employee\GetName.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
