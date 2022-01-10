@@ -16,8 +16,21 @@ namespace MasterClass9pmBatch.Controllers
         {
             return View();
         }
-        [Authorize]
+        [Authorize(Roles="Admin,Manager")]
         public ActionResult Dashboard()
+        {
+            return View();
+        }
+
+        [Authorize(Roles="Manager")]
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+
+
+        [Authorize(Roles="Admin")]
+        public ActionResult AboutUs()
         {
             return View();
         }
@@ -25,7 +38,8 @@ namespace MasterClass9pmBatch.Controllers
         [HttpPost]
         public ActionResult Login(UserDetail usd)
         {
-            var user = db.UserDetails.Where(s => s.UserName == usd.UserName && s.Password == usd.Password);
+            var user = db.UserDetails.Where(s => s.UserName == usd.UserName 
+                                           && s.Password == usd.Password);
             if (user != null)
             {
                 FormsAuthentication.SetAuthCookie(usd.UserName, false);
