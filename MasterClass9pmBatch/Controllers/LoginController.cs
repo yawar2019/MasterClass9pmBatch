@@ -54,6 +54,10 @@ namespace MasterClass9pmBatch.Controllers
             return RedirectToAction("Login");
         }
 
-
+        [OutputCache(Duration =20,Location =System.Web.UI.OutputCacheLocation.Client)]
+        public ActionResult GetDataFromCache()
+        {
+            return View();
+        }
     }
 }
