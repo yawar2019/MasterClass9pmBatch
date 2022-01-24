@@ -149,13 +149,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\WCFServiceReference\ActionResultExample.WCFServiceReference.CompositeType.datasource">
+    <Content Include="Service References\ServiceReference1\ActionResultExample.ServiceReference1.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WCFServiceReference\Service1.disco" />
-    <None Include="Service References\WCFServiceReference\configuration91.svcinfo" />
-    <None Include="Service References\WCFServiceReference\configuration.svcinfo" />
-    <None Include="Service References\WCFServiceReference\Reference.svcmap">
+    <None Include="Service References\ServiceReference1\Service1.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -174,7 +174,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\WCFServiceReference\Reference.cs">
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -194,14 +194,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <None Include="Service References\CalculatorServiceReference\CalculatorService.wsdl" />
-    <None Include="Service References\WCFServiceReference\Service1.wsdl" />
-    <None Include="Service References\WCFServiceReference\Service1.xsd">
+    <None Include="Service References\ServiceReference1\Service1.wsdl" />
+    <None Include="Service References\ServiceReference1\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WCFServiceReference\Service11.xsd">
+    <None Include="Service References\ServiceReference1\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WCFServiceReference\Service12.xsd">
+    <None Include="Service References\ServiceReference1\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -219,7 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CalculatorServiceReference\" />
-    <WCFMetadataStorage Include="Service References\WCFServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -8,7 +8,7 @@ using Dapper;
 using System.Data.SqlClient;
 using ActionResultExample.Models;
 using ActionResultExample.CalculatorServiceReference;
-using ActionResultExample.WCFServiceReference;
+using ActionResultExample;
 
 namespace ActionResultExample.Controllers
 {
@@ -87,9 +87,12 @@ namespace ActionResultExample.Controllers
         }
         public ActionResult GetWCFService()
         {
-            WCFServiceReference.Service1Client obj = new Service1Client();
+            ServiceReference1.Service1Client obj = new ServiceReference1.Service1Client("WSHttpBinding_IService1");
             int result = obj.Add(12, 20);
-            return Content(result.ToString());
+            ServiceReference1.Service1Client obj1 = new ServiceReference1.Service1Client("NetTcpBinding_IService1");
+            int result1 = obj1.Add(42, 20);
+
+            return Content(result.ToString()+ result1.ToString());
         }
 
 
